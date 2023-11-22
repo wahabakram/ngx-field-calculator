@@ -1,0 +1,52 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<div class="input-group form-group">
+    <input type="text" class="ctm-input form-control" [placeholder]="placeholder" [(ngModel)]="value" [name]="name"
+        (ngModelChange)="changeValue($event)">
+    <div class="position-relative input-group-prepend">
+        <span class="material-symbols-outlined calculator-icon" (click)="displayCalculator($event)"
+            #calculatorIcon>calculate</span>
+
+        <div *ngIf="isVisible" class="container" [ngStyle]="calendarStyles" #calculator>
+            <div class="buttons">
+                <div class="button-group">
+                    <input type="button" value="7" #button7 (click)="clickHandler(button7.value)">
+                    <input type="button" value="8" #button8 (click)="clickHandler(button8.value)">
+                    <input type="button" value="9" #button9 (click)="clickHandler(button9.value)">
+                    <input type="button" value="+" #buttonAdd (click)="clickHandler(buttonAdd.value)">
+                </div>
+
+                <div class="button-group">
+                    <input type="button" value="4" #button4 (click)="clickHandler(button4.value)">
+                    <input type="button" value="5" #button5 (click)="clickHandler(button5.value)">
+                    <input type="button" value="6" #button6 (click)="clickHandler(button6.value)">
+                    <input type="button" value="-" #buttonSub (click)="clickHandler(buttonSub.value)">
+                </div>
+
+                <div class="button-group">
+                    <input type="button" value="1" #button1 (click)="clickHandler(button1.value)">
+                    <input type="button" value="2" #button2 (click)="clickHandler(button2.value)">
+                    <input type="button" value="3" #button3 (click)="clickHandler(button3.value)">
+                    <input type="button" value="*" #buttonMul (click)="clickHandler(buttonMul.value)">
+                </div>
+
+                <div class="button-group">
+                    <input type="button" value="0" #button0 (click)="clickHandler(button0.value)">
+                    <input type="button" value="." #buttonDot (click)="clickHandler(buttonDot.value)">
+                    <input type="button" value="/" #buttonDiv (click)="clickHandler(buttonDiv.value)">
+                    <input type="button" class="red" value="=" (click)="calcResult()">
+                </div>
+                <div class="button-group">
+                    <input class="button-clear" type="button" value="AC" #buttonClear
+                        (click)="clickHandler(buttonClear.value)">
+                    <button class="button-back" type="button" value="Back" #buttonBack
+                        (click)="clickHandler(buttonBack.value)">
+                        <span class="material-symbols-outlined">
+                            backspace
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
