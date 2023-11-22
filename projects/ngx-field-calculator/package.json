@@ -10,7 +10,7 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/wahabakram/ngx-field-calculator/"
   },
   "peerDependencies": {
     "@angular/common": "^13.3.0",
